@@ -10,34 +10,30 @@ class User extends sequelize_1.Model {
 User.init({
     id: {
         type: sequelize_1.DataTypes.UUID,
-        defaultValue: sequelize_1.DataTypes.UUIDV4,
+        defaultValue: sequelize_1.UUIDV4,
         primaryKey: true,
     },
     username: {
         type: sequelize_1.DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     password: {
         type: sequelize_1.DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     email: {
         type: sequelize_1.DataTypes.STRING,
-        allowNull: false,
-        unique: true,
+        allowNull: false
     },
-    role: {
-        type: sequelize_1.DataTypes.STRING,
+    isAdmin: {
+        type: sequelize_1.DataTypes.BOOLEAN,
         allowNull: false,
-        defaultValue: 'user',
-    },
-    gocardlessCustomerId: {
-        type: sequelize_1.DataTypes.STRING,
-        allowNull: true,
+        defaultValue: false,
     },
 }, {
     sequelize: pgConfig_1.default,
     modelName: 'User',
+    tableName: 'user'
 });
 exports.default = User;
 //# sourceMappingURL=user.js.map
