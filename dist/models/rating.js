@@ -39,10 +39,9 @@ Rating.init({
     sequelize: pgConfig_1.default,
     modelName: 'Rating',
 });
-// // Associations
-// Rating.belongsTo(User, { foreignKey: 'userId' });
-// Rating.belongsTo(Book, { foreignKey: 'bookId' });
-// Book.hasMany(Rating);
-// User.hasMany(Rating);
+Rating.belongsTo(user_1.default, { foreignKey: 'userId' });
+Rating.belongsTo(book_1.default, { foreignKey: 'bookId' });
+book_1.default.hasMany(Rating);
+user_1.default.hasMany(Rating);
 exports.default = Rating;
 //# sourceMappingURL=rating.js.map

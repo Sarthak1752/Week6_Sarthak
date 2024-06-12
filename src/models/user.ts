@@ -7,7 +7,7 @@ class User extends Model {
   public password!: string;
   public email!: string;
   public role!: string;
-  public gocardlessCustomerId?: string; // New field
+  public gocardlessCustomerId?: string;
 }
 
 User.init(
